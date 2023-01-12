@@ -3,6 +3,12 @@ import './normal.css';
 import './App.css';
 
 function App() {
+
+  async function handleSubmit(e){
+      e.preventDefault();
+      console.log('submit');
+  }
+
   return (
     <>
         <div className='App'>
@@ -36,11 +42,13 @@ function App() {
                 </div>
             </div>
               <div className='chat-input-holder'>
-                <textarea
-                rows = "1"
-                className='chat-input-textarea'
-                placeholder='Type your message here'
-                ></textarea>
+                <form onSubmit = {handleSubmit}>
+                    <input
+                      rows = "1"
+                      className='chat-input-textarea'
+                      placeholder='Type your message here'
+                    />
+                </form>
               </div>
           </section>   
         </div>
